@@ -1,7 +1,13 @@
-namespace ProjectName.Models //update namespace here
+namespace Factory.Models
 {
-  public class ClassName //create model class here
+  public class Engineer
   {
-    public int Id { get; set; }
+    public int EngineerId { get; set; }
+    [Required(ErrorMessage = "The engineers name can't be empty.")]
+    public string Name { get; set; }
+    [Required(ErrorMessage = "The engineers license can't be empty.")]
+    public string License { get; set; }
+    public List <EngineerMachine> JoinEntities { get; }
+
   }
 }
